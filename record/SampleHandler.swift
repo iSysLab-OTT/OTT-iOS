@@ -6,6 +6,7 @@
 //
 
 import ReplayKit
+//import DNA
 
 class SampleHandler: RPBroadcastSampleHandler {
 
@@ -14,7 +15,7 @@ class SampleHandler: RPBroadcastSampleHandler {
     private let nodeURL: URL
 
     override init() {
-        print("init")
+        print("init, ")
         nodeURL = fileManager.temporaryDirectory
             .appendingPathComponent(UUID().uuidString)
             .appendingPathExtension(for: .mpeg4Movie)

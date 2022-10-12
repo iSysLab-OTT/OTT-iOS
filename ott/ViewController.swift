@@ -19,8 +19,27 @@ class ViewController: RPBroadcastActivityViewController {
         broadcastPicker.preferredExtension = "com.chongin12.dev.ott.record"
         
         self.view.addSubview(broadcastPicker)
+        
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
     }
     
+    @IBOutlet weak var pickerView: UIPickerView!
+    let pickerData = ["Netflix", "Wavve", "Disney+", "Tving"]
+    let ottURL = ["nflx", "tidcaptvpooq", "disneyplus", "tvingapp"].map { $0+"://" }
+    var selected = 0
+    @IBAction func launchOTTButton(_ sender: Any) {
+        let url = ottURL[selected]
+        let linkURL = NSURL(string: url)
+        
+        if (UIApplication.shared.canOpenURL(linkURL! as URL)) {
+            
+            UIApplication.shared.open(linkURL! as URL)
+        }
+        else {
+            print("Not installed.")
+        }
+    }
     @IBAction func onTap(_ sender: UIButton) {
         read()
     }
@@ -99,5 +118,21 @@ class ViewController: RPBroadcastActivityViewController {
                 player?.play()
             })
         }
+    }
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pickerData.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.pickerData[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.selected = row
     }
 }

@@ -72,9 +72,9 @@
 		AB883C8B288669C700DE27E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB883C8E288669C700DE27E6 /* BroadcastSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastSetupViewController.swift; sourceTree = "<group>"; };
 		AB883C90288669C700DE27E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB883CA128866AB500DE27E6 /* record.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = record.entitlements; sourceTree = "<group>"; };
-		AB883CA228866AE400DE27E6 /* ott.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ott.entitlements; sourceTree = "<group>"; };
 		AB96864D288670DB00F46C29 /* library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = library.swift; sourceTree = "<group>"; };
+		ABCC60C428A4C4B80076CE46 /* ott.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ott.entitlements; sourceTree = "<group>"; };
+		ABCC60C528A4C4E10076CE46 /* record.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = record.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 		AB883C642886693B00DE27E6 /* ott */ = {
 			isa = PBXGroup;
 			children = (
-				AB883CA228866AE400DE27E6 /* ott.entitlements */,
+				ABCC60C428A4C4B80076CE46 /* ott.entitlements */,
 				AB883C652886693B00DE27E6 /* AppDelegate.swift */,
 				AB883C672886693B00DE27E6 /* SceneDelegate.swift */,
 				AB883C692886693B00DE27E6 /* ViewController.swift */,
@@ -153,7 +153,7 @@
 		AB883C81288669C700DE27E6 /* record */ = {
 			isa = PBXGroup;
 			children = (
-				AB883CA128866AB500DE27E6 /* record.entitlements */,
+				ABCC60C528A4C4E10076CE46 /* record.entitlements */,
 				AB883C82288669C700DE27E6 /* SampleHandler.swift */,
 				AB96864D288670DB00F46C29 /* library.swift */,
 				AB883C84288669C700DE27E6 /* Info.plist */,
@@ -244,6 +244,7 @@
 					};
 					AB883C7C288669C700DE27E6 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 					AB883C88288669C700DE27E6 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -483,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ott/ott.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYZM4D2Z3D;
@@ -500,6 +502,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chongin12.dev.ott;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -513,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ott/ott.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYZM4D2Z3D;
@@ -530,6 +534,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chongin12.dev.ott;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -589,11 +594,15 @@
 		AB883C9B288669C700DE27E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = record/record.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYZM4D2Z3D;
+				GCC_VERSION = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_PROFILING_CODE = NO;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = record/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = record;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -607,7 +616,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/record/CLibrary";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -615,11 +627,15 @@
 		AB883C9C288669C700DE27E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = record/record.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYZM4D2Z3D;
+				GCC_VERSION = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_PROFILING_CODE = NO;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = record/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = record;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -633,7 +649,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/record/CLibrary";
 				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

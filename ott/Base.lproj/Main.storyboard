@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qQr-Ay-7Gr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qQr-Ay-7Gr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,22 +18,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-qB-CvB">
-                                <rect key="frame" x="173.5" y="432.5" width="67" height="31"/>
+                                <rect key="frame" x="155" y="431" width="104.5" height="34.5"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="see recent"/>
                                 <connections>
                                     <action selector="onTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5as-sF-iTx"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUq-tT-3Ia">
+                                <rect key="frame" x="0.0" y="475.5" width="414" height="131"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="uo7-e3-O6B" userLabel="height = 162"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kd-KG-2SY">
+                                <rect key="frame" x="152.5" y="616.5" width="109" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="8ll-Mn-8V5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="go this app"/>
+                                <connections>
+                                    <action selector="launchOTTButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9b-Co-kse"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cUq-tT-3Ia" secondAttribute="trailing" id="5hd-Xd-aTj"/>
                             <constraint firstItem="UIH-qB-CvB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7CE-I4-JOG"/>
+                            <constraint firstItem="3kd-KG-2SY" firstAttribute="top" secondItem="cUq-tT-3Ia" secondAttribute="bottom" constant="10" id="EmQ-Jg-kd1"/>
                             <constraint firstItem="UIH-qB-CvB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XE4-NV-PxH"/>
+                            <constraint firstItem="cUq-tT-3Ia" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a7a-GT-x3q"/>
+                            <constraint firstItem="3kd-KG-2SY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="avc-i2-Yao"/>
+                            <constraint firstItem="cUq-tT-3Ia" firstAttribute="top" secondItem="UIH-qB-CvB" secondAttribute="bottom" constant="10" id="e2H-YT-aXC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I3n-wu-E1D"/>
+                    <connections>
+                        <outlet property="pickerView" destination="cUq-tT-3Ia" id="Ho7-dt-dqL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,7 +70,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qQr-Ay-7Gr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vr2-ZG-82I">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
