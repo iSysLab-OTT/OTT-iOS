@@ -9,16 +9,23 @@ import UIKit
 import AVFoundation
 import AVKit
 import ReplayKit
+import SnapKit
 
 class ViewController: RPBroadcastActivityViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let broadcastPicker = RPSystemBroadcastPickerView(frame: CGRect(x: 100, y: 200, width: 50, height: 50))
+        let broadcastPicker = RPSystemBroadcastPickerView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        self.view.addSubview(broadcastPicker)
+        broadcastPicker.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.width.height.equalTo(50)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(5)
+        }
         broadcastPicker.preferredExtension = "com.chongin12.dev.ott.record"
         
-        self.view.addSubview(broadcastPicker)
+        
         
         [netflixButton, wavveButton, disneyplusButton, tvingButton].forEach {
             $0?.setTitle("", for: .normal)
