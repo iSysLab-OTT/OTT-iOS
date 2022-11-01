@@ -18,46 +18,94 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-qB-CvB">
-                                <rect key="frame" x="155" y="431" width="104.5" height="34.5"/>
+                                <rect key="frame" x="155" y="142" width="104.5" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34.5" id="X44-1Z-GQi"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="see recent"/>
                                 <connections>
                                     <action selector="onTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5as-sF-iTx"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUq-tT-3Ia">
-                                <rect key="frame" x="0.0" y="475.5" width="414" height="131"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A73-tV-jMQ">
+                                <rect key="frame" x="20" y="280.5" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="131" id="uo7-e3-O6B" userLabel="height = 162"/>
-                                </constraints>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kd-KG-2SY">
-                                <rect key="frame" x="152.5" y="616.5" width="109" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="8ll-Mn-8V5"/>
+                                    <constraint firstAttribute="width" constant="150" id="Z0z-Mp-c8Q"/>
+                                    <constraint firstAttribute="height" constant="150" id="arB-cn-e11"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="go this app"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="netflix"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="launchOTTButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9b-Co-kse"/>
+                                    <action selector="netflixButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TVZ-ie-5gn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrX-AE-IjT">
+                                <rect key="frame" x="244" y="280.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="OCe-Bs-V51"/>
+                                    <constraint firstAttribute="width" constant="150" id="R0Q-pv-e6Z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="wavve"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="wavveButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="285-pI-K2C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkE-SD-dUC">
+                                <rect key="frame" x="20" y="504.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="PII-rJ-01o"/>
+                                    <constraint firstAttribute="height" constant="150" id="ojf-yo-9mm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="disneyplus"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="disneyplusButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Xb-uL-nyQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w62-7G-vu7">
+                                <rect key="frame" x="244" y="504.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="099-D9-hAT"/>
+                                    <constraint firstAttribute="height" constant="150" id="pSM-nH-doe"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="tving"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tvingButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6L4-eI-IMF"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cUq-tT-3Ia" secondAttribute="trailing" id="5hd-Xd-aTj"/>
+                            <constraint firstItem="A73-tV-jMQ" firstAttribute="top" secondItem="UIH-qB-CvB" secondAttribute="bottom" constant="104" id="0me-mE-Iti"/>
+                            <constraint firstItem="A73-tV-jMQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="64B-Zj-Oo4"/>
                             <constraint firstItem="UIH-qB-CvB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7CE-I4-JOG"/>
-                            <constraint firstItem="3kd-KG-2SY" firstAttribute="top" secondItem="cUq-tT-3Ia" secondAttribute="bottom" constant="10" id="EmQ-Jg-kd1"/>
-                            <constraint firstItem="UIH-qB-CvB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XE4-NV-PxH"/>
-                            <constraint firstItem="cUq-tT-3Ia" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a7a-GT-x3q"/>
-                            <constraint firstItem="3kd-KG-2SY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="avc-i2-Yao"/>
-                            <constraint firstItem="cUq-tT-3Ia" firstAttribute="top" secondItem="UIH-qB-CvB" secondAttribute="bottom" constant="10" id="e2H-YT-aXC"/>
+                            <constraint firstItem="UIH-qB-CvB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="I7E-ze-yjZ"/>
+                            <constraint firstItem="ZkE-SD-dUC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="InR-1w-c9z"/>
+                            <constraint firstItem="wrX-AE-IjT" firstAttribute="top" secondItem="UIH-qB-CvB" secondAttribute="bottom" constant="104" id="JdF-o9-osC"/>
+                            <constraint firstItem="ZkE-SD-dUC" firstAttribute="top" secondItem="A73-tV-jMQ" secondAttribute="bottom" constant="74" id="Oj4-Rx-z0u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w62-7G-vu7" secondAttribute="trailing" constant="20" id="Zz9-xv-QP5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wrX-AE-IjT" secondAttribute="trailing" constant="20" id="oAJ-Ln-xGl"/>
+                            <constraint firstItem="w62-7G-vu7" firstAttribute="top" secondItem="wrX-AE-IjT" secondAttribute="bottom" constant="74" id="yUl-o1-IG1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I3n-wu-E1D"/>
                     <connections>
-                        <outlet property="pickerView" destination="cUq-tT-3Ia" id="Ho7-dt-dqL"/>
+                        <outlet property="disneyplusButton" destination="ZkE-SD-dUC" id="HgI-H2-nMx"/>
+                        <outlet property="netflixButton" destination="A73-tV-jMQ" id="1yc-JM-XbV"/>
+                        <outlet property="tvingButton" destination="w62-7G-vu7" id="b6u-op-grr"/>
+                        <outlet property="wavveButton" destination="wrX-AE-IjT" id="YNJ-rB-wNW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -84,6 +132,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="disneyplus" width="225" height="225"/>
+        <image name="netflix" width="112.5" height="112.5"/>
+        <image name="tving" width="112.5" height="112.5"/>
+        <image name="wavve" width="112.5" height="112.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

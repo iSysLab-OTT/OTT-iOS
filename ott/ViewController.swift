@@ -20,16 +20,19 @@ class ViewController: RPBroadcastActivityViewController {
         
         self.view.addSubview(broadcastPicker)
         
-        self.pickerView.delegate = self
-        self.pickerView.dataSource = self
+        [netflixButton, wavveButton, disneyplusButton, tvingButton].forEach {
+            $0?.setTitle("", for: .normal)
+        }
+        
     }
     
-    @IBOutlet weak var pickerView: UIPickerView!
-    let pickerData = ["Netflix", "Wavve", "Disney+", "Tving"]
-    let ottURL = ["nflx", "tidcaptvpooq", "disneyplus", "tvingapp"].map { $0+"://" }
-    var selected = 0
-    @IBAction func launchOTTButton(_ sender: Any) {
-        let url = ottURL[selected]
+    
+    @IBOutlet weak var netflixButton: UIButton!
+    @IBOutlet weak var wavveButton: UIButton!
+    @IBOutlet weak var disneyplusButton: UIButton!
+    @IBOutlet weak var tvingButton: UIButton!
+    private func launchOTT(with index: Int) {
+        let url = ottURL[index]
         let linkURL = NSURL(string: url)
         
         if (UIApplication.shared.canOpenURL(linkURL! as URL)) {
@@ -40,6 +43,22 @@ class ViewController: RPBroadcastActivityViewController {
             print("Not installed.")
         }
     }
+    @IBAction func netflixButtonDidTap(_ sender: Any) {
+        launchOTT(with: 0)
+    }
+    @IBAction func wavveButtonDidTap(_ sender: Any) {
+        launchOTT(with: 1)
+    }
+    @IBAction func disneyplusButtonDidTap(_ sender: Any) {
+        launchOTT(with: 2)
+    }
+    @IBAction func tvingButtonDidTap(_ sender: Any) {
+        launchOTT(with: 3)
+    }
+    
+    let pickerData = ["Netflix", "Wavve", "Disney+", "Tving"]
+    let ottURL = ["nflx", "tidcaptvpooq", "disneyplus", "tvingapp"].map { $0 + "://" }
+    let assetName = ["netflix", "wavve", "disneyplus", "tving"]
     @IBAction func onTap(_ sender: UIButton) {
         read()
     }
@@ -118,21 +137,5 @@ class ViewController: RPBroadcastActivityViewController {
                 player?.play()
             })
         }
-    }
-}
-
-extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.pickerData.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.pickerData[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.selected = row
     }
 }
