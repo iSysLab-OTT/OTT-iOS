@@ -25,14 +25,56 @@ class ViewController: RPBroadcastActivityViewController {
         }
         broadcastPicker.preferredExtension = "com.chongin12.dev.ott.record"
         
-        
-        
         [netflixButton, wavveButton, disneyplusButton, tvingButton].forEach {
             $0?.setTitle("", for: .normal)
         }
         
+        pointerTest()
     }
     
+    private func pointerTest() {
+        let count = 5
+        let pointer = UnsafeMutablePointer<Int16>.allocate(capacity: count)
+        defer { pointer.deallocate() }
+        let dump: () -> () = {
+          for i in 0..<count {
+            print("\(pointer[i])")
+          }
+        }
+        for i in 0..<count {
+          pointer[i] = Int16(i+1234)
+        }
+        print("pointer pointee : \(pointer.pointee)")
+        dump()
+        
+        let pointer2 = UnsafeMutablePointer<CChar>.allocate(capacity: count)
+        defer { pointer2.deallocate() }
+        let dump2: () -> () = {
+          for i in 0..<count {
+            print("\(pointer2[i])")
+          }
+        }
+        for i in 0..<count {
+            pointer2[i] = CChar("\((i*99)%10)")!
+        }
+        print("pointer2 pointee : \(pointer2.pointee)")
+        dump2()
+        
+//        let a: Int32 = 1
+//        let b: Int32 = 2
+//        let res = addTwoIntegers(a, b)
+//        print(res)
+        
+
+        let pointer123 = UnsafeMutablePointer<Int16>.allocate(capacity: 72608)
+        
+        let len: Int32 = 72608
+        
+        let pointer234 = UnsafeMutablePointer<CChar>.allocate(capacity: 1285)
+        
+        let ret = pcm_to_dna(pointer123, len, pointer234)
+        print("ret : \(ret)")
+    }
     
     @IBOutlet weak var netflixButton: UIButton!
     @IBOutlet weak var wavveButton: UIButton!

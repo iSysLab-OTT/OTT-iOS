@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1679C42930843E00B43AAE /* libDNALib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1679C32930843E00B43AAE /* libDNALib.a */; };
+		AB1679C52930843E00B43AAE /* libDNALib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1679C32930843E00B43AAE /* libDNALib.a */; };
 		AB6207C12911106D00EA4C7C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB6207C02911106D00EA4C7C /* SnapKit */; };
 		AB883C662886693B00DE27E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB883C652886693B00DE27E6 /* AppDelegate.swift */; };
 		AB883C682886693B00DE27E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB883C672886693B00DE27E6 /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 		AB883C93288669C700DE27E6 /* recordSetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AB883C89288669C700DE27E6 /* recordSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AB883C96288669C700DE27E6 /* record.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AB883C7D288669C700DE27E6 /* record.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AB96864F288671B200F46C29 /* library.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB96864D288670DB00F46C29 /* library.swift */; };
+		ABDD1092292C979900EAED1C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDD1091292C975600EAED1C /* libz.tbd */; };
+		ABDD1095292C988D00EAED1C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDD1091292C975600EAED1C /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB1679C22930843000B43AAE /* DNAFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNAFunc.h; sourceTree = "<group>"; };
+		AB1679C32930843E00B43AAE /* libDNALib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDNALib.a; sourceTree = "<group>"; };
+		AB1679C62930845200B43AAE /* ott-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ott-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB883C622886693B00DE27E6 /* ott.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ott.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB883C652886693B00DE27E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB883C672886693B00DE27E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +93,9 @@
 		AB96864D288670DB00F46C29 /* library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = library.swift; sourceTree = "<group>"; };
 		ABCC60C428A4C4B80076CE46 /* ott.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ott.entitlements; sourceTree = "<group>"; };
 		ABCC60C528A4C4E10076CE46 /* record.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = record.entitlements; sourceTree = "<group>"; };
+		ABDD1091292C975600EAED1C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		ABDD1093292C985300EAED1C /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
+		ABDD1096292C989300EAED1C /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB6207C12911106D00EA4C7C /* SnapKit in Frameworks */,
+				ABDD1092292C979900EAED1C /* libz.tbd in Frameworks */,
+				ABDD1095292C988D00EAED1C /* libz.tbd in Frameworks */,
+				AB1679C42930843E00B43AAE /* libDNALib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB883C80288669C700DE27E6 /* ReplayKit.framework in Frameworks */,
+				AB1679C52930843E00B43AAE /* libDNALib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +134,7 @@
 		AB883C592886693B00DE27E6 = {
 			isa = PBXGroup;
 			children = (
+				AB1679C62930845200B43AAE /* ott-Bridging-Header.h */,
 				AB883C642886693B00DE27E6 /* ott */,
 				AB883C81288669C700DE27E6 /* record */,
 				AB883C8D288669C700DE27E6 /* recordSetupUI */,
@@ -141,6 +156,8 @@
 		AB883C642886693B00DE27E6 /* ott */ = {
 			isa = PBXGroup;
 			children = (
+				AB1679C32930843E00B43AAE /* libDNALib.a */,
+				AB1679C22930843000B43AAE /* DNAFunc.h */,
 				ABCC60C428A4C4B80076CE46 /* ott.entitlements */,
 				AB883C652886693B00DE27E6 /* AppDelegate.swift */,
 				AB883C672886693B00DE27E6 /* SceneDelegate.swift */,
@@ -156,6 +173,9 @@
 		AB883C7E288669C700DE27E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABDD1096292C989300EAED1C /* libz.1.1.3.tbd */,
+				ABDD1093292C985300EAED1C /* libswiftWebKit.tbd */,
+				ABDD1091292C975600EAED1C /* libz.tbd */,
 				AB883C7F288669C700DE27E6 /* ReplayKit.framework */,
 				AB883C8B288669C700DE27E6 /* UIKit.framework */,
 			);
@@ -506,21 +526,29 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYZM4D2Z3D;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/ott";
 				INFOPLIST_FILE = ott/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ott",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chongin12.dev.ott;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chongin12/Documents/iOS-Project/ott/ott-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -538,21 +566,29 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SYZM4D2Z3D;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/ott";
 				INFOPLIST_FILE = ott/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ott",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chongin12.dev.ott;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chongin12/Documents/iOS-Project/ott/ott-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -628,6 +664,10 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ott",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chongin12.dev.ott.record;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,6 +700,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ott",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chongin12.dev.ott.record;
