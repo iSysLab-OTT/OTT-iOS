@@ -64,7 +64,8 @@ public final class BroadcastWriter {
     }()
 
     private var audioSampleRate: Double {
-        AVAudioSession.sharedInstance().sampleRate
+//        AVAudioSession.sharedInstance().sampleRate
+        22050
     }
     private lazy var audioInput: AVAssetWriterInput = {
 
@@ -82,16 +83,31 @@ public final class BroadcastWriter {
     }()
 
     private lazy var microphoneInput: AVAssetWriterInput = {
-        let sampleRate = AVAudioSession.sharedInstance().sampleRate
+        
+        var asbd: AudioStreamBasicDescription = AudioStreamBasicDescription()
+        asbd.mSampleRate = 22050;
+        asbd.mFormatID = kAudioFormatLinearPCM;
+        asbd.mFormatFlags = kAudioFormatFlagIsBigEndian | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
+        asbd.mChannelsPerFrame = 1;
+        asbd.mFramesPerPacket = 1;
+        asbd.mBitsPerChannel = 16;
+        asbd.mBytesPerFrame = 2;
+        asbd.mBytesPerPacket = 2;
+        
 
         var audioSettings: [String: Any] = [
-            AVFormatIDKey: kAudioFormatMPEG4AAC,
+            AVFormatIDKey: kAudioFormatLinearPCM,
             AVNumberOfChannelsKey: 1,
-            AVSampleRateKey: audioSampleRate
+            AVSampleRateKey: audioSampleRate,
         ]
+        guard let cmfd: CMFormatDescription = try? CMFormatDescription(audioStreamBasicDescription: asbd) else { return AVAssetWriterInput(
+            mediaType: .audio,
+            outputSettings: audioSettings)
+        }
         let input: AVAssetWriterInput = .init(
             mediaType: .audio,
-            outputSettings: audioSettings
+            outputSettings: audioSettings,
+            sourceFormatHint: cmfd
         )
         input.expectsMediaDataInRealTime = true
         return input
