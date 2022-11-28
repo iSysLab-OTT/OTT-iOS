@@ -84,30 +84,36 @@ public final class BroadcastWriter {
 
     private lazy var microphoneInput: AVAssetWriterInput = {
         
-        var asbd: AudioStreamBasicDescription = AudioStreamBasicDescription()
-        asbd.mSampleRate = 22050;
-        asbd.mFormatID = kAudioFormatLinearPCM;
-        asbd.mFormatFlags = kAudioFormatFlagIsBigEndian | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
-        asbd.mChannelsPerFrame = 1;
-        asbd.mFramesPerPacket = 1;
-        asbd.mBitsPerChannel = 16;
-        asbd.mBytesPerFrame = 2;
-        asbd.mBytesPerPacket = 2;
+        var asbd: AudioStreamBasicDescription = AudioStreamBasicDescription(
+            mSampleRate: Float64(22050),
+            mFormatID: kAudioFormatLinearPCM,
+            mFormatFlags: kAudioFormatFlagIsBigEndian | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked,
+            mBytesPerPacket: 2,
+            mFramesPerPacket: 1,
+            mBytesPerFrame: 2,
+            mChannelsPerFrame: 1,
+            mBitsPerChannel: 16,
+            mReserved: 0
+        )
         
-
+//        let audioFormat = AVAudioFormat(streamDescription: &asbd)!
         var audioSettings: [String: Any] = [
             AVFormatIDKey: kAudioFormatLinearPCM,
             AVNumberOfChannelsKey: 1,
-            AVSampleRateKey: audioSampleRate,
+            AVSampleRateKey: 22050,
+            AVLinearPCMIsFloatKey: false,
+            AVLinearPCMIsBigEndianKey: true,
+            AVLinearPCMBitDepthKey: 16,
+            AVLinearPCMIsNonInterleaved: false
         ]
-        guard let cmfd: CMFormatDescription = try? CMFormatDescription(audioStreamBasicDescription: asbd) else { return AVAssetWriterInput(
-            mediaType: .audio,
-            outputSettings: audioSettings)
-        }
+//        guard let cmfd: CMFormatDescription = try? CMFormatDescription(audioStreamBasicDescription: asbd) else { return AVAssetWriterInput(
+//            mediaType: .audio,
+//            outputSettings: audioSettings)
+//        }
+        
         let input: AVAssetWriterInput = .init(
             mediaType: .audio,
-            outputSettings: audioSettings,
-            sourceFormatHint: cmfd
+            outputSettings: audioSettings
         )
         input.expectsMediaDataInRealTime = true
         return input
